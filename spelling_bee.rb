@@ -1,3 +1,5 @@
+#! /usr/bin/env ruby
+
 require 'ruby-dictionary'
 require 'pry'
 
@@ -71,7 +73,7 @@ class Speller
 end
 
 puts "starting up....."
-if ARGV.length
+if ARGV.length > 0
   if ["-h", "--help"].include?(ARGV[0])
     puts "usage: spelling_bee.rb [required_letter] [other_letters_no_spaces] [max_letter_number]"
   else
@@ -82,5 +84,7 @@ if ARGV.length
     puts "ready, set, go!"
     a.run
   end
+else
+  puts "usage: spelling_bee.rb [required_letter] [other_letters_no_spaces] [max_letter_number]"
 end
 
